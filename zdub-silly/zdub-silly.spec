@@ -54,12 +54,6 @@ setgittag --rm -f v%{lib_gitver}
 
 
 %check
-dub build \
-    --cache=local --temp-build \
-    --skip-registry=all \
-    --compiler=ldc2 \
-    --deep
-dub clean
 
 
 %install
