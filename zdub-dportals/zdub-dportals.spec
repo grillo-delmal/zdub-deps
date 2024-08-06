@@ -62,6 +62,7 @@ cp %{SOURCE1} .
 
 %check
 dub build \
+    --config=unittest \
     --cache=local --temp-build \
     --skip-registry=all \
     --compiler=ldc2 \
