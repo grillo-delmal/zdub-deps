@@ -17,7 +17,7 @@ Version:        %{lib_ver}%{?lib_suffix:}
 Release:        %autorelease
 Summary:        %{lib_name} library for D
 Group:          Development/Libraries
-License:        Apache-2.0
+License:        BSL-1.0
 URL:            https://github.com/libmir/dcv
 Source0:        https://github.com/libmir/dcv/archive/refs/tags/v%{lib_gitver}/dcv-%{lib_gitver}.tar.gz
 
@@ -54,6 +54,8 @@ zdub-dub-settings-hack method.
 %prep
 %autosetup -n %{lib_name}-%{lib_gitver} -p1
 setgittag --rm -f v%{lib_gitver}
+
+mv LICENSE_1_0.txt LICENSE
 
 
 %check
