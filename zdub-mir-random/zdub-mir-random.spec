@@ -20,6 +20,7 @@ Group:          Development/Libraries
 License:        Apache-2.0
 URL:            https://github.com/libmir/mir-random
 Source0:        https://github.com/libmir/mir-random/archive/refs/tags/v%{lib_gitver}/mir-random-%{lib_gitver}.tar.gz
+Source1:        LICENSE
 
 BuildRequires:  setgittag
 BuildRequires:  git
@@ -54,6 +55,8 @@ zdub-dub-settings-hack method.
 %prep
 %autosetup -n %{lib_name}-%{lib_gitver} -p1
 setgittag --rm -f v%{lib_gitver}
+
+cp %{SOURCE1} .
 
 
 %check
