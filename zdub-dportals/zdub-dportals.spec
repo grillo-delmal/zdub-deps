@@ -28,6 +28,7 @@ BuildRequires:  ldc
 BuildRequires:  dub
 BuildRequires:  zdub-ddbus-static
 BuildRequires:  zdub-silly-static
+BuildRequires:  dbus-devel
 
 
 %description
@@ -43,6 +44,8 @@ Group:          Development/Libraries
 Requires:       zdub-dub-settings-hack
 Requires:       zdub-ddbus-static
 Requires:       zdub-silly-static
+
+Requires:       dbus-devel
 
 
 %description devel

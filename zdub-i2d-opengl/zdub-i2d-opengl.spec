@@ -17,7 +17,7 @@ Version:        %{lib_ver}%{?lib_suffix:}
 Release:        %autorelease
 Summary:        %{lib_name} library for D
 Group:          Development/Libraries
-License:        BSD-2-Clause
+License:        BSL-1.0
 URL:            https://github.com/Inochi2D/%{lib_name}
 Source0:        https://github.com/Inochi2D/i2d-opengl/archive/refs/tags/v%{lib_gitver}/i2d-opengl-%{lib_gitver}.tar.gz
 
@@ -50,6 +50,8 @@ zdub-dub-settings-hack method.
 %prep
 %autosetup -n %{lib_name}-%{lib_gitver} -p1
 setgittag --rm -f v%{lib_gitver}
+
+mv LICENSE_1_0.txt LICENSE
 
 
 %check
