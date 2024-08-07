@@ -52,6 +52,8 @@ setgittag --rm -f v%{lib_gitver}
 
 cp %{SOURCE1} .
 
+rm -rf ./tests
+
 
 %check
 dub build \
