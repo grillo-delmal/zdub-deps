@@ -19,7 +19,7 @@ Summary:        xdg-portals for D
 Group:          Development/Libraries
 License:        BSD-2-Clause
 URL:            https://github.com/Inochi2D/%{lib_name}
-Source0:        https://github.com/Inochi2D/dportals/archive/refs/tags/v%{lib_gitver}/dportals-%{lib_gitver}.tar.gz
+Source0:        https://code.dlang.org/packages/%{lib_name}/%{lib_gitver}.zip
 Source1:        LICENSE
 
 BuildRequires:  setgittag

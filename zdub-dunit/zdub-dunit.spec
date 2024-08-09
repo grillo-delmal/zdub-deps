@@ -19,7 +19,7 @@ Summary:        %{lib_name} library for D
 Group:          Development/Libraries
 License:        MIT
 URL:            https://github.com/nomad-software/dunit
-Source0:        https://github.com/nomad-software/dunit/archive/refs/tags/v%{lib_gitver}/dunit-%{lib_gitver}.tar.gz
+Source0:        https://code.dlang.org/packages/%{lib_name}/%{lib_gitver}.zip
 
 BuildRequires:  setgittag
 BuildRequires:  git

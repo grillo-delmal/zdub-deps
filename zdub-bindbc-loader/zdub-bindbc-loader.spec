@@ -19,7 +19,7 @@ Summary:        %{lib_name} library for D
 Group:          Development/Libraries
 License:        BSL-1.0
 URL:            https://github.com/BindBC/bindbc-loader
-Source0:        https://github.com/BindBC/bindbc-loader/archive/refs/tags/v%{lib_gitver}/bindbc-loader-%{lib_gitver}.tar.gz
+Source0:        https://code.dlang.org/packages/%{lib_name}/%{lib_gitver}.zip
 
 BuildRequires:  setgittag
 BuildRequires:  git

@@ -19,7 +19,7 @@ Summary:        %{lib_name} library for D
 Group:          Development/Libraries
 License:        Apache-2.0
 URL:            https://github.com/libmir/mir-random
-Source0:        https://github.com/libmir/mir-random/archive/refs/tags/v%{lib_gitver}/mir-random-%{lib_gitver}.tar.gz
+Source0:        https://code.dlang.org/packages/%{lib_name}/%{lib_gitver}.zip
 Source1:        LICENSE
 
 BuildRequires:  setgittag

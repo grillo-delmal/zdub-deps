@@ -19,7 +19,7 @@ Summary:        %{lib_name} library for D
 Group:          Development/Libraries
 License:        Apache-2.0
 URL:            https://github.com/libmir/mir-algorithm
-Source0:        https://github.com/libmir/mir-algorithm/archive/refs/tags/v%{lib_gitver}/mir-algorithm-%{lib_gitver}.tar.gz
+Source0:        https://code.dlang.org/packages/%{lib_name}/%{lib_gitver}.zip
 
 BuildRequires:  setgittag
 BuildRequires:  git

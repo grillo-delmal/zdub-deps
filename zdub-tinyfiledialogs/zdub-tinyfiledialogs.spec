@@ -19,7 +19,7 @@ Summary:        %{lib_name} library for D
 Group:          Development/Libraries
 License:        Zlib
 URL:            https://github.com/dayllenger/tinyfiledialogs-d
-Source0:        https://github.com/dayllenger/tinyfiledialogs-d/archive/refs/tags/v%{lib_gitver}/tinyfiledialogs-d-%{lib_gitver}.tar.gz
+Source0:        https://code.dlang.org/packages/%{lib_name}/%{lib_gitver}.zip
 
 BuildRequires:  setgittag
 BuildRequires:  git

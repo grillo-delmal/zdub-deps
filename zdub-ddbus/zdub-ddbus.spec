@@ -19,7 +19,7 @@ Summary:        %{lib_name} library for D
 Group:          Development/Libraries
 License:        MIT
 URL:            https://github.com/trishume/ddbus
-Source0:        https://github.com/trishume/ddbus/archive/refs/tags/v%{lib_gitver}/ddbus-%{lib_gitver}.tar.gz
+Source0:        https://code.dlang.org/packages/%{lib_name}/%{lib_gitver}.zip
 Source1:        LICENSE
 
 BuildRequires:  setgittag

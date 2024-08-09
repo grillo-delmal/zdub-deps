@@ -23,7 +23,7 @@ Summary:        %{lib_name} library for D
 Group:          Development/Libraries
 License:        BSL-1.0 and MIT
 URL:            https://github.com/Inochi2D/%{lib_name}
-Source0:        https://github.com/Inochi2D/i2d-imgui/archive/refs/tags/v%{lib_gitver}/i2d-imgui-%{lib_gitver}.tar.gz
+Source0:        https://code.dlang.org/packages/%{lib_name}/%{lib_gitver}.zip
 Source1:        https://github.com/Inochi2D/cimgui/archive/%{cimgui_commit}/cimgui-%{cimgui_short}.tar.gz
 Source2:        https://github.com/Inochi2D/imgui/archive/%{imgui_commit}/imgui-%{imgui_short}.tar.gz
 

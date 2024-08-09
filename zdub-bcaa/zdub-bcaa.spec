@@ -19,7 +19,7 @@ Summary:        %{lib_name} library for D
 Group:          Development/Libraries
 License:        BSL-1.0
 URL:            https://github.com/aferust/bcaa
-Source0:        https://github.com/aferust/bcaa/archive/refs/tags/v%{lib_gitver}/bcaa-%{lib_gitver}.tar.gz
+Source0:        https://code.dlang.org/packages/%{lib_name}/%{lib_gitver}.zip
 Source1:        LICENSE
 
 BuildRequires:  setgittag
