@@ -19,7 +19,7 @@ Summary:        %{lib_name} library for D
 Group:          Development/Libraries
 License:        ISC
 URL:            https://gitlab.com/AntonMeep/silly
-Source0:        https://code.dlang.org/packages/%{lib_name}/%{lib_gitver}.zip
+Source0:        https://gitlab.com/AntonMeep/silly/-/archive/v%{lib_gitver}/silly-v%{lib_gitver}.tar.gz
 
 BuildRequires:  setgittag
 BuildRequires:  git
