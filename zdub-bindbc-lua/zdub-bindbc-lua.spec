@@ -67,7 +67,7 @@ dub build \
     --skip-registry=all \
     --compiler=ldc2 \
     --deep \
-    --version=LUA_52
+    --d-version=LUA_52
 dub clean
 
 
