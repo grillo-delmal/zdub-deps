@@ -62,6 +62,11 @@ mv -f dub.json dub.json.base
 jq '. += {"version": "0.9.8"}' dub.json.base > dub.json.ver
 jq 'walk(if type == "object" then with_entries(select(.key | test("preBuildCommands*") | not)) else . end)' dub.json.ver > dub.json
 
+pushd tls
+dub convert -f json
+mv dub.json dub.json.static
+jq 'walk(if type == "object" then with_entries(select(.key | test("openssl-static") | not)) else . end)' dub.json.static > dub.json
+
 mv LICENSE.txt LICENSE
 rm -rf lib
 

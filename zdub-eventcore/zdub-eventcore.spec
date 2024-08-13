@@ -56,6 +56,7 @@ jq 'walk(if type == "object" then with_entries(select(.key | test("preBuildComma
 
 mv dub.json dub.json.async
 jq 'walk(if type == "object" then with_entries(select(.key | test("libasync") | not)) else . end)' dub.json.async > dub.json
+
 mv LICENSE.txt LICENSE
 
 
