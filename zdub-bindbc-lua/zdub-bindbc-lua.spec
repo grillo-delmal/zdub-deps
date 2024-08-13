@@ -17,7 +17,7 @@ Version:        %{lib_ver}%{?lib_suffix:}
 Release:        %autorelease
 Summary:        %{lib_name} library for D
 Group:          Development/Libraries
-License:        BSD-2-Clause
+License:        BSL-1.0
 URL:            https://github.com/Inochi2D/%{lib_name}
 Source0:        https://code.dlang.org/packages/%{lib_name}/%{lib_gitver}.zip
 
@@ -26,6 +26,7 @@ BuildRequires:  ldc
 BuildRequires:  dub
 BuildRequires:  jq
 BuildRequires:  zdub-bindbc-loader-static
+BuildRequires:  luajit
 
 
 %description
@@ -41,6 +42,8 @@ Group:          Development/Libraries
 Requires:       zdub-dub-settings-hack
 Requires:       zdub-bindbc-loader-static
 
+Requires:       luajit
+
 
 %description devel
 Sources to use the %{lib_name} library on dub using the
@@ -54,13 +57,17 @@ mv -f dub.json dub.json.base
 jq '. += {"version": "0.5.1"}' dub.json.base > dub.json.ver
 jq 'walk(if type == "object" then with_entries(select(.key | test("preBuildCommands*") | not)) else . end)' dub.json.ver > dub.json
 
+mv LICENSE_1_0.txt LICENSE
+
 
 %check
 dub build \
+    dcv:core \
     --cache=local --temp-build \
     --skip-registry=all \
     --compiler=ldc2 \
-    --deep
+    --deep \
+    --version=LUA_52
 dub clean
 
 
