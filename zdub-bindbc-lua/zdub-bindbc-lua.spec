@@ -62,7 +62,6 @@ mv LICENSE_1_0.txt LICENSE
 
 %check
 dub build \
-    dcv:core \
     --cache=local --temp-build \
     --skip-registry=all \
     --compiler=ldc2 \
