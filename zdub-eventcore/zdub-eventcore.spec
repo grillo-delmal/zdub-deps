@@ -54,6 +54,8 @@ mv -f dub.json dub.json.base
 jq '. += {"version": "0.9.31"}' dub.json.base > dub.json.ver
 jq 'walk(if type == "object" then with_entries(select(.key | test("preBuildCommands*") | not)) else . end)' dub.json.ver > dub.json
 
+mv dub.json dub.json.async
+jq 'walk(if type == "object" then with_entries(select(.key | test("libasync") | not)) else . end)' dub.json.async > dub.json
 mv LICENSE.txt LICENSE
 
 
