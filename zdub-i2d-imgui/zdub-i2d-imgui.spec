@@ -27,12 +27,10 @@ Source0:        https://code.dlang.org/packages/%{lib_name}/%{lib_gitver}.zip
 Source1:        https://github.com/Inochi2D/cimgui/archive/%{cimgui_commit}/cimgui-%{cimgui_short}.tar.gz
 Source2:        https://github.com/Inochi2D/imgui/archive/%{imgui_commit}/imgui-%{imgui_short}.tar.gz
 
-Patch0:         i2d-imgui_0_no-prebuild.patch
-
-BuildRequires:  setgittag
 BuildRequires:  git
 BuildRequires:  ldc
 BuildRequires:  dub
+BuildRequires:  jq
 BuildRequires:  zdub-bindbc-sdl-static
 BuildRequires:  zdub-i2d-opengl-static
 BuildRequires:  cmake
@@ -56,11 +54,8 @@ Requires:       zdub-dub-settings-hack
 Requires:       zdub-bindbc-sdl-static
 Requires:       zdub-i2d-opengl-static
 
-Requires:       cmake
-Requires:       gcc
-Requires:       gcc-c++
-Requires:       freetype-devel
-Requires:       SDL2-devel
+Requires:       freetype
+Requires:       SDL2
 
 
 %description devel
@@ -70,7 +65,10 @@ zdub-dub-settings-hack method.
 
 %prep
 %autosetup -n %{lib_name}-%{lib_gitver} -p1
-setgittag --rm -f v%{lib_gitver}
+[ -f dub.sdl ] && dub convert -f json
+mv -f dub.json dub.json.base
+jq '. += {"version": "0.8.0"}' dub.json.base > dub.json.ver
+jq 'walk(if type == "object" then with_entries(select(.key | test("preBuildCommands*") | not)) else . end)' dub.json.ver > dub.json
 
 # cimgui
 

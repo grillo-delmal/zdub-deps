@@ -1,9 +1,9 @@
 %global debug_package %{nil}
 
-%define lib_name      fghj
-%define lib_ver       1.0.2
-%define lib_gitver    1.0.2
-%define lib_semver    1.0.2
+%define lib_name      facetrack-d
+%define lib_ver       0.7.8
+%define lib_gitver    0.7.8
+%define lib_semver    0.7.8
 %define lib_dist      0
 %define lib_commit    0000000
 %define lib_short     0000000
@@ -17,7 +17,7 @@ Version:        %{lib_ver}%{?lib_suffix:}
 Release:        %autorelease
 Summary:        %{lib_name} library for D
 Group:          Development/Libraries
-License:        BSL-1.0
+License:        BSD-2-Clause
 URL:            https://github.com/Inochi2D/%{lib_name}
 Source0:        https://code.dlang.org/packages/%{lib_name}/%{lib_gitver}.zip
 
@@ -25,7 +25,9 @@ BuildRequires:  git
 BuildRequires:  ldc
 BuildRequires:  dub
 BuildRequires:  jq
-BuildRequires:  zdub-mir-algorithm-static
+BuildRequires:  zdub-fghj-static
+BuildRequires:  zdub-inmath-static
+BuildRequires:  zdub-vmc-d-static
 
 
 %description
@@ -39,7 +41,9 @@ Summary:        Support to use %{lib_name} for developing D applications
 Group:          Development/Libraries
 
 Requires:       zdub-dub-settings-hack
-Requires:       zdub-mir-algorithm-static
+Requires:       zdub-fghj-static
+Requires:       zdub-inmath-static
+Requires:       zdub-vmc-d-static
 
 
 %description devel
@@ -51,10 +55,8 @@ zdub-dub-settings-hack method.
 %autosetup -n %{lib_name}-%{lib_gitver} -p1
 [ -f dub.sdl ] && dub convert -f json
 mv -f dub.json dub.json.base
-jq '. += {"version": "1.0.2"}' dub.json.base > dub.json.ver
+jq '. += {"version": "0.7.8"}' dub.json.base > dub.json.ver
 jq 'walk(if type == "object" then with_entries(select(.key | test("preBuildCommands*") | not)) else . end)' dub.json.ver > dub.json
-
-mv LICENSE.md LICENSE
 
 
 %check
