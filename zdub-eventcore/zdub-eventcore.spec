@@ -17,8 +17,8 @@ Version:        %{lib_ver}%{?lib_suffix:}
 Release:        %autorelease
 Summary:        %{lib_name} library for D
 Group:          Development/Libraries
-License:        BSD-2-Clause
-URL:            https://github.com/Inochi2D/%{lib_name}
+License:        MIT
+URL:            https://github.com/vibe-d/eventcore
 Source0:        https://code.dlang.org/packages/%{lib_name}/%{lib_gitver}.zip
 
 BuildRequires:  git
@@ -54,9 +54,12 @@ mv -f dub.json dub.json.base
 jq '. += {"version": "0.9.31"}' dub.json.base > dub.json.ver
 jq 'walk(if type == "object" then with_entries(select(.key | test("preBuildCommands*") | not)) else . end)' dub.json.ver > dub.json
 
+mv LICENSE.txt LICENSE
+
 
 %check
 dub build \
+    --config=epoll \
     --cache=local --temp-build \
     --skip-registry=all \
     --compiler=ldc2 \

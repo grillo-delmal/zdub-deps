@@ -28,7 +28,6 @@ BuildRequires:  jq
 BuildRequires:  zdub-diet-ng-static
 BuildRequires:  zdub-mir-linux-kernel-static
 BuildRequires:  zdub-openssl-static
-BuildRequires:  zdub-openssl-static-static
 BuildRequires:  zdub-vibe-container-static
 BuildRequires:  zdub-vibe-core-static
 
@@ -47,7 +46,6 @@ Requires:       zdub-dub-settings-hack
 Requires:       zdub-diet-ng-static
 Requires:       zdub-mir-linux-kernel-static
 Requires:       zdub-openssl-static
-Requires:       zdub-openssl-static-static
 Requires:       zdub-vibe-container-static
 Requires:       zdub-vibe-core-static
 
