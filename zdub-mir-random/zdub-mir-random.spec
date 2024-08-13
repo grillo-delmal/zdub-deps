@@ -22,7 +22,6 @@ URL:            https://github.com/libmir/mir-random
 Source0:        https://code.dlang.org/packages/%{lib_name}/%{lib_gitver}.zip
 Source1:        LICENSE
 
-BuildRequires:  setgittag
 BuildRequires:  git
 BuildRequires:  ldc
 BuildRequires:  dub
@@ -54,7 +53,10 @@ zdub-dub-settings-hack method.
 
 %prep
 %autosetup -n %{lib_name}-%{lib_gitver} -p1
-setgittag --rm -f v%{lib_gitver}
+[ -f dub.sdl ] && dub convert -f json
+mv -f dub.json dub.json.base
+jq '. += {"version": "2.2.19"}' dub.json.base > dub.json.ver
+jq 'walk(if type == "object" then with_entries(select(.key | test("preBuildCommands*") | not)) else . end)' dub.json.ver > dub.json
 
 cp %{SOURCE1} .
 

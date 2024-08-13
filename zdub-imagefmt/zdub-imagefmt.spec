@@ -21,7 +21,6 @@ License:        BSD-2-Clause
 URL:            https://github.com/tjhann/imagefmt
 Source0:        https://code.dlang.org/packages/%{lib_name}/%{lib_gitver}.zip
 
-BuildRequires:  setgittag
 BuildRequires:  git
 BuildRequires:  ldc
 BuildRequires:  dub
@@ -47,7 +46,10 @@ zdub-dub-settings-hack method.
 
 %prep
 %autosetup -n %{lib_name}-%{lib_gitver} -p1
-setgittag --rm -f v%{lib_gitver}
+[ -f dub.sdl ] && dub convert -f json
+mv -f dub.json dub.json.base
+jq '. += {"version": "2.1.2"}' dub.json.base > dub.json.ver
+jq 'walk(if type == "object" then with_entries(select(.key | test("preBuildCommands*") | not)) else . end)' dub.json.ver > dub.json
 
 
 %check
