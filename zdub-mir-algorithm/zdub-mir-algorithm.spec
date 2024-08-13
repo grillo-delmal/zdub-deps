@@ -24,6 +24,7 @@ Source0:        https://code.dlang.org/packages/%{lib_name}/%{lib_gitver}.zip
 BuildRequires:  git
 BuildRequires:  ldc
 BuildRequires:  dub
+BuildRequires:  jq
 BuildRequires:  zdub-mir-core-static
 BuildRequires:  zdub-silly-static
 

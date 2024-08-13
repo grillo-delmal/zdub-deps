@@ -24,6 +24,7 @@ Source0:        https://gitlab.com/AntonMeep/silly/-/archive/v%{lib_gitver}/sill
 BuildRequires:  git
 BuildRequires:  ldc
 BuildRequires:  dub
+BuildRequires:  jq
 
 
 %description

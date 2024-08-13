@@ -25,6 +25,7 @@ Source1:        LICENSE
 BuildRequires:  git
 BuildRequires:  ldc
 BuildRequires:  dub
+BuildRequires:  jq
 BuildRequires:  zdub-dunit-static
 
 

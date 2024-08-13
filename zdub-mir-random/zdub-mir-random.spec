@@ -25,6 +25,7 @@ Source1:        LICENSE
 BuildRequires:  git
 BuildRequires:  ldc
 BuildRequires:  dub
+BuildRequires:  jq
 BuildRequires:  zdub-mir-algorithm-static
 BuildRequires:  zdub-mir-core-static
 BuildRequires:  zdub-mir-linux-kernel-static
