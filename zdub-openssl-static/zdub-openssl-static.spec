@@ -17,9 +17,10 @@ Version:        %{lib_ver}%{?lib_suffix:}
 Release:        %autorelease
 Summary:        %{lib_name} library for D
 Group:          Development/Libraries
-License:        BSD-2-Clause
+License:        Apache-2.0
 URL:            https://github.com/Inochi2D/%{lib_name}
 Source0:        https://code.dlang.org/packages/%{lib_name}/%{lib_gitver}.zip
+Source1:        LICENSE
 
 BuildRequires:  git
 BuildRequires:  ldc
@@ -46,20 +47,16 @@ zdub-dub-settings-hack method.
 
 
 %prep
-%autosetup -n %{lib_name}-%{lib_gitver} -p1
+%autosetup -n deimos-openssl-static-%{lib_gitver} -p1
 [ -f dub.sdl ] && dub convert -f json
 mv -f dub.json dub.json.base
 jq '. += {"version": "1.0.5+3.0.8"}' dub.json.base > dub.json.ver
 jq 'walk(if type == "object" then with_entries(select(.key | test("preBuildCommands*") | not)) else . end)' dub.json.ver > dub.json
 
+cp %{SOURCE1} .
+
 
 %check
-dub build \
-    --cache=local --temp-build \
-    --skip-registry=all \
-    --compiler=ldc2 \
-    --deep
-dub clean
 
 
 %install

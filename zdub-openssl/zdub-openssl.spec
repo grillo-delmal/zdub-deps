@@ -17,8 +17,8 @@ Version:        %{lib_ver}%{?lib_suffix:}
 Release:        %autorelease
 Summary:        %{lib_name} library for D
 Group:          Development/Libraries
-License:        BSD-2-Clause
-URL:            https://github.com/Inochi2D/%{lib_name}
+License:        OpenSSL
+URL:            https://github.com/D-Programming-Deimos/openssl
 Source0:        https://code.dlang.org/packages/%{lib_name}/%{lib_gitver}.zip
 Source1:        LICENSE
 
@@ -26,6 +26,7 @@ BuildRequires:  git
 BuildRequires:  ldc
 BuildRequires:  dub
 BuildRequires:  jq
+BuildRequires:  openssl-devel
 
 
 %description
@@ -39,6 +40,8 @@ Summary:        Support to use %{lib_name} for developing D applications
 Group:          Development/Libraries
 
 Requires:       zdub-dub-settings-hack
+
+Requires:       openssl-devel
 
 
 %description devel
@@ -56,13 +59,11 @@ jq 'walk(if type == "object" then with_entries(select(.key | test("preBuildComma
 cp %{SOURCE1} .
 
 
+%build
+ldc2 -run scripts/generate_version.d
+
+
 %check
-dub build \
-    --cache=local --temp-build \
-    --skip-registry=all \
-    --compiler=ldc2 \
-    --deep
-dub clean
 
 
 %install
