@@ -27,6 +27,7 @@ BuildRequires:  dub
 BuildRequires:  jq
 BuildRequires:  zdub-fghj-static
 BuildRequires:  zdub-inmath-static
+BuildRequires:  zdub-vibe-d-static
 BuildRequires:  zdub-vmc-d-static
 
 
@@ -43,6 +44,7 @@ Group:          Development/Libraries
 Requires:       zdub-dub-settings-hack
 Requires:       zdub-fghj-static
 Requires:       zdub-inmath-static
+Requires:       zdub-vibe-d-static
 Requires:       zdub-vmc-d-static
 
 
