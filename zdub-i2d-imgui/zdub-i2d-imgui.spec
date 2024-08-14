@@ -54,6 +54,7 @@ Requires:       zdub-dub-settings-hack
 Requires:       zdub-bindbc-sdl-static
 Requires:       zdub-i2d-opengl-static
 
+Requires:       libstdc++
 Requires:       freetype
 Requires:       SDL2
 
