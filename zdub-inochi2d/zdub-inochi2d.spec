@@ -66,7 +66,7 @@ jq 'walk(if type == "object" then with_entries(select(.key | test("preBuildComma
 cat > source/inochi2d/ver.d <<EOF
 module inochi2d.ver;
 
-enum IN_VERSION = "%{inochi2d_semver}";
+enum IN_VERSION = "%{lib_semver}";
 EOF
 
 
