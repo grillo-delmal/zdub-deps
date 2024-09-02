@@ -42,6 +42,8 @@ Group:          Development/Libraries
 Requires:       zdub-dub-settings-hack
 Requires:       zdub-mir-core-static
 
+Requires:       zdub-silly-static
+
 
 %description devel
 Sources to use the %{lib_name} library on dub using the

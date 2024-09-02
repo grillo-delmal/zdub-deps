@@ -26,7 +26,7 @@ BuildRequires:  ldc
 BuildRequires:  dub
 BuildRequires:  jq
 BuildRequires:  zdub-bindbc-loader-static
-BuildRequires:  luajit
+BuildRequires:  luajit-devel
 
 
 %description
@@ -42,7 +42,7 @@ Group:          Development/Libraries
 Requires:       zdub-dub-settings-hack
 Requires:       zdub-bindbc-loader-static
 
-Requires:       luajit
+Requires:       luajit-devel
 
 
 %description devel

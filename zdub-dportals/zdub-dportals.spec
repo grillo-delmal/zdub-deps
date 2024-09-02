@@ -45,7 +45,7 @@ Requires:       zdub-dub-settings-hack
 Requires:       zdub-ddbus-static
 Requires:       zdub-silly-static
 
-Requires:       dbus
+Requires:       dbus-devel
 
 
 %description devel
