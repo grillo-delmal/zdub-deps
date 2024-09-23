@@ -1,9 +1,9 @@
 %global debug_package %{nil}
 
 %define lib_name      inochi2d
-%define lib_ver       0.8.4
-%define lib_gitver    0.8.4
-%define lib_semver    0.8.4
+%define lib_ver       0.8.6
+%define lib_gitver    0.8.6
+%define lib_semver    0.8.6
 %define lib_dist      0
 %define lib_commit    0000000
 %define lib_short     0000000
@@ -29,6 +29,7 @@ BuildRequires:  zdub-fghj-static
 BuildRequires:  zdub-i2d-opengl-static
 BuildRequires:  zdub-imagefmt-static
 BuildRequires:  zdub-inmath-static
+BuildRequires:  zdub-numem-static
 BuildRequires:  zdub-silly-static
 
 
@@ -47,6 +48,7 @@ Requires:       zdub-fghj-static
 Requires:       zdub-i2d-opengl-static
 Requires:       zdub-imagefmt-static
 Requires:       zdub-inmath-static
+Requires:       zdub-numem-static
 Requires:       zdub-silly-static
 
 
@@ -59,7 +61,7 @@ zdub-dub-settings-hack method.
 %autosetup -n %{lib_name}-%{lib_gitver} -p1
 [ -f dub.sdl ] && dub convert -f json
 mv -f dub.json dub.json.base
-jq '. += {"version": "0.8.4"}' dub.json.base > dub.json.ver
+jq '. += {"version": "0.8.6"}' dub.json.base > dub.json.ver
 jq 'walk(if type == "object" then with_entries(select(.key | test("preBuildCommands*") | not)) else . end)' dub.json.ver > dub.json
 
 # FIX: Inochi2D version dependent on git

@@ -1,9 +1,9 @@
 %global debug_package %{nil}
 
 %define lib_name      inui
-%define lib_ver       1.2.1
-%define lib_gitver    1.2.1
-%define lib_semver    1.2.1
+%define lib_ver       1.2.2
+%define lib_gitver    1.2.2
+%define lib_semver    1.2.2
 %define lib_dist      0
 %define lib_commit    0000000
 %define lib_short     0000000
@@ -65,7 +65,7 @@ zdub-dub-settings-hack method.
 %autosetup -n %{lib_name}-%{lib_gitver} -p1
 [ -f dub.sdl ] && dub convert -f json
 mv -f dub.json dub.json.base
-jq '. += {"version": "1.2.1"}' dub.json.base > dub.json.ver
+jq '. += {"version": "1.2.2"}' dub.json.base > dub.json.ver
 jq 'walk(if type == "object" then with_entries(select(.key | test("preBuildCommands*") | not)) else . end)' dub.json.ver > dub.json
 
 
