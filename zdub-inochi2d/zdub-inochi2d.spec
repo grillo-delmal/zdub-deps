@@ -61,7 +61,7 @@ zdub-dub-settings-hack method.
 %autosetup -n %{lib_name}-%{lib_gitver} -p1
 [ -f dub.sdl ] && dub convert -f json
 mv -f dub.json dub.json.base
-jq '. += {"version": "0.8.6"}' dub.json.base > dub.json.ver
+jq '. += {"version": "%{version}"}' dub.json.base > dub.json.ver
 jq 'walk(if type == "object" then with_entries(select(.key | test("preBuildCommands*") | not)) else . end)' dub.json.ver > dub.json
 
 # FIX: Inochi2D version dependent on git

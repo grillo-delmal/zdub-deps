@@ -49,7 +49,7 @@ zdub-dub-settings-hack method.
 %autosetup -n %{lib_name}-%{lib_gitver} -p1
 [ -f dub.sdl ] && dub convert -f json
 mv -f dub.json dub.json.base
-jq '. += {"version": "1.0.1"}' dub.json.base > dub.json.ver
+jq '. += {"version": "%{version}"}' dub.json.base > dub.json.ver
 jq 'walk(if type == "object" then with_entries(select(.key | test("preBuildCommands*") | not)) else . end)' dub.json.ver > dub.json
 
 # This file generates warnings because of the shebangs.
