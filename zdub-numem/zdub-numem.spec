@@ -25,6 +25,7 @@ BuildRequires:  git
 BuildRequires:  ldc
 BuildRequires:  dub
 BuildRequires:  jq
+BuildRequires:  zdub-silly-static
 
 
 %description
@@ -38,6 +39,7 @@ Summary:        Support to use %{lib_name} for developing D applications
 Group:          Development/Libraries
 
 Requires:       zdub-dub-settings-hack
+Requires:       zdub-silly-static
 
 
 %description devel
